@@ -8,9 +8,21 @@ dotenv.config({
     path:'./env'
 })
 connDb()
+.then(()=>{
+    app.listen(process.env.PORT || 8000 ,()=>{ 
+        console.log(`Server running onn ${process.env.PORT}`);
+    })
+})
+.catch((error)=>{
+    console.log("mongo connection failed");
+    
+})
 
-
-
+// mongoose.connection.on('error', (err) => {
+//     console.error('Mongoose connection error:', err);
+//     process.exit(1);   
+  
+//   });
 
 
 
