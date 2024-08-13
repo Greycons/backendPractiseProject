@@ -8,3 +8,4 @@ class ApiResponse extends Error{
         this.message=message
         this.success =statusCode<400
     }
+}
